@@ -1,3 +1,20 @@
 .Search {
   padding: 10px;
 }
+
+form {
+  padding-bottom: 30px;
+}
+.search-input {
+  background-color: #eaebeb;
+  border: 0px;
+  margin-right: 5px;
+  border-radius: 5px;
+  color: #92979b;
+}
+.search-submit {
+  background-color: #eaebeb;
+  border: 0px;
+  border-radius: 5px;
+  color: #1d1f20;
+}

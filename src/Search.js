@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import CurrentWeather from "./CurrentWeather";
 import "./Search.css";
 
 export default function Search() {
@@ -7,7 +8,7 @@ export default function Search() {
 
   function handleSubmit(event) {
     event.preventDefault();
-    setMessage("hello");
+    setMessage(<CurrentWeather city={city} />);
   }
 
   function changeCity(event) {
