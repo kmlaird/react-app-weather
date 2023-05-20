@@ -20,6 +20,7 @@ main {
   background-size: cover;
   padding: 20px;
   min-height: 500px;
+  color: #eaebeb;
 }
 .App-footer {
   background-color: #00001c;
