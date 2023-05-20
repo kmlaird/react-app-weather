@@ -3,11 +3,32 @@
 }
 
 .ct {
-  background-color: #113d9085;
+  background-color: #113d90e9;
   margin: 20px;
   border: 3px solid #92979b;
   border-radius: 15px;
   padding: 20px;
   justify-content: center;
   aspect-ratio: 9/4;
+}
+
+h2 {
+  font-size: 45px;
+}
+h3 {
+  font-size: 40px;
+  margin: 20px auto 25px;
+  font-weight: 700;
+}
+
+p {
+  font-size: 18px;
+}
+.max-temp {
+  font-weight: 700;
+  font-size: 20px;
+}
+.min-temp {
+  opacity: 0.8;
+  font-size: 20px;
 }
