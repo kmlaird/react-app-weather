@@ -23,12 +23,19 @@ main {
 }
 .App-footer {
   background-color: #00001c;
-  min-height: 10vh;
+  padding: 20px 0 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(5px + 2vmin);
-  color: white;
+  color: whitesmoke;
   border-top: 2px solid white;
+}
+.App-footer a {
+  color: whitesmoke;
+}
+
+.App-footer a:hover {
+  color: #113e90;
 }
