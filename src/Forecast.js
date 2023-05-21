@@ -12,26 +12,49 @@ export default function Forecast(props) {
     setForecast(response.data.daily);
   }
 
+  function formatDay(timestamp) {
+    let date = new Date(timestamp);
+    let day = date.getDay();
+
+    let days = [
+      "Sunday",
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+    ];
+
+    return days[day];
+  }
+
   if (loaded) {
     return (
       <div className="forecast">
-        <h2>Forecast</h2>
+        <h2>Coming Up</h2>
         <div className="row">
-          <div className="col fcast">
-            <p className="fcast-day">
-              <strong>{forecast[0].dt}</strong>
-            </p>
-            <WeatherIcon code={forecast[0].weather[0].icon} />
-            <p>
-              <span className="max-temp">
-                {Math.round(forecast[0].temp.max)}°F
-              </span>{" "}
-              |{" "}
-              <span className="min-temp">
-                {Math.round(forecast[0].temp.min)}°F
-              </span>
-            </p>
-          </div>
+          {forecast.map(function(dailyForecast, index) {
+            if (index < 6 && index > 0) {
+              return (
+                <div className="col fcast" key={index}>
+                  <p className="fcast-day">
+                    <strong>{formatDay(forecast[index].dt * 1000)}</strong>
+                  </p>
+                  <WeatherIcon code={forecast[index].weather[0].icon} />
+                  <p>
+                    <span className="max-temp">
+                      {Math.round(forecast[index].temp.max)}°F
+                    </span>{" "}
+                    |{" "}
+                    <span className="min-temp">
+                      {Math.round(forecast[index].temp.min)}°F
+                    </span>
+                  </p>
+                </div>
+              );
+            }
+          })}
         </div>
       </div>
     );
