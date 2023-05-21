@@ -32,3 +32,13 @@ p {
   opacity: 0.8;
   font-size: 20px;
 }
+#degree {
+  display: inline;
+  position: relative;
+  top: -10px;
+  font-size: 25px;
+}
+
+#w-icon {
+  margin: 10px auto;
+}

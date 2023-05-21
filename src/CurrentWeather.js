@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import WeatherIcon from "./WeatherIcon";
 import Forecast from "./Forecast";
 import "./CurrentWeather.css";
 
@@ -19,9 +20,7 @@ export default function CurrentWeather(props) {
 
   function showWeather(response) {
     setLoaded(true);
-    setIcon(
-      `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
-    );
+    setIcon(response.data.weather[0].icon);
     setDescription(response.data.weather[0].main);
     setTemperature(response.data.main.temp);
     setFeelsLike(response.data.main.feels_like);
@@ -56,11 +55,16 @@ export default function CurrentWeather(props) {
           <div className="col ct">
             <div className="row">
               <div className="col">
-                <img src={icon} alt="icon" />
+                <div id="w-icon">
+                  <WeatherIcon code={icon} />
+                </div>
                 <p>{description}</p>
               </div>
               <div className="col">
-                <h3>{Math.round(temperature)}°F</h3>
+                <h3>
+                  {Math.round(temperature)}
+                  <span id="degree">°F</span>
+                </h3>
                 <p>Feels like {Math.round(feelsLike)}°F</p>
               </div>
             </div>
