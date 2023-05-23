@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import WeatherIcon from "./WeatherIcon";
 import Forecast from "./Forecast";
@@ -32,6 +32,10 @@ export default function CurrentWeather(props) {
     setSunset(formatDate(response.data.sys.sunset * 1000));
     setCoordinates(response.data.coord);
   }
+
+  useEffect(() => {
+    setLoaded(false);
+  }, [props.city]);
 
   function formatDate(timestamp) {
     let now = new Date(timestamp);
