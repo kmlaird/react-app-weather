@@ -54,6 +54,7 @@ export default function Forecast(props) {
                 </div>
               );
             }
+            return null;
           })}
         </div>
       </div>
