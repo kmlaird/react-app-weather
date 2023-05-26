@@ -82,8 +82,26 @@ export default function CurrentWeather(props) {
             <p>Wind: {Math.round(wind)} mph</p>
           </div>
           <div className="col ct">
-            <p>Sunrise: {sunrise}</p>
-            <p>Sunset: {sunset}</p>
+            <div className="row">
+              <div className="col">
+                <a
+                  href="https://www.flaticon.com/free-icons/sunrise"
+                  title="sunrise icons"
+                >
+                  <img src="./images/sunrise.png" alt="sunrise icon" />
+                </a>
+                <p>{sunrise}</p>
+              </div>
+              <div className="col">
+                <a
+                  href="https://www.flaticon.com/free-icons/sunset"
+                  title="sunset icons"
+                >
+                  <img src="./images/sunset.png" alt="sunset icon" />
+                </a>
+                <p>{sunset}</p>
+              </div>
+            </div>
           </div>
         </div>
         <Forecast city={props.city} coordinates={coordinates} />

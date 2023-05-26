@@ -14,7 +14,9 @@
   border-bottom: 2px solid #92979b;
   position: sticky;
   top: 0;
+  z-index: 2;
 }
+
 main {
   background-image: url("./images/lightning.png");
   background-size: cover;
