@@ -3,6 +3,8 @@ import axios from "axios";
 import WeatherIcon from "./WeatherIcon";
 import Forecast from "./Forecast";
 import "./CurrentWeather.css";
+import sunriseImg from "./images/sunrise.jpeg";
+import sunsetImg from "./images/sunset.jpeg";
 
 export default function CurrentWeather(props) {
   const [loaded, setLoaded] = useState(false);
@@ -84,21 +86,11 @@ export default function CurrentWeather(props) {
           <div className="col ct">
             <div className="row">
               <div className="col">
-                <a
-                  href="https://www.flaticon.com/free-icons/sunrise"
-                  title="sunrise icons"
-                >
-                  <img src="./images/sunrise.png" alt="sunrise icon" />
-                </a>
+                <img src={sunriseImg} alt="sunrise icon" className="sunImg" />
                 <p>{sunrise}</p>
               </div>
               <div className="col">
-                <a
-                  href="https://www.flaticon.com/free-icons/sunset"
-                  title="sunset icons"
-                >
-                  <img src="./images/sunset.png" alt="sunset icon" />
-                </a>
+                <img src={sunsetImg} alt="sunset icon" className="sunImg" />
                 <p>{sunset}</p>
               </div>
             </div>
